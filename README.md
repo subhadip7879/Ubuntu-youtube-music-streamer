@@ -15,3 +15,4 @@ There is a lot of scope for the application's improvement like performance and G
     Navigate to the directory where the .py file has been saved.
     python3 music_edm.py
     Enjoy!!
+    Happy Listening
