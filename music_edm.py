@@ -8,7 +8,7 @@ import random
 import math
 import time,sys
 
-
+#import required modules 
 root = Tk()
 def move_window(event):
   root.geometry('+{0}+{1}'.format(event.x_root,event.y_root))
