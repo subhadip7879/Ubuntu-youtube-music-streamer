@@ -28,9 +28,6 @@ def executor():
      edm_collection.execute_script("return arguments[0].scrollIntoView();", song[x-4])
     time.sleep(1)
     song[x].click()
-
-
-    #time.sleep(4)
     edm_collection.implicitly_wait(5)
 
     try:
@@ -39,7 +36,6 @@ def executor():
     except Exception:
        j =1
     try :
-       #time.sleep(2)
        title = edm_collection.find_element_by_id('eow-title')
     except Exception:
        print(colored("sorry Network Error.....Try again","red"))
@@ -56,7 +52,6 @@ def executor():
     title2 = title2.replace("(Lyrics Video)"," ")
     title2 = title2.replace("(Lyric)"," ")
 
-    #print(colored('Playing : ','blue',attrs=['bold']) + colored(title2,'cyan') + ' ')
     sty = "PLAYING: " + title2
     str_length = len(sty)
     space = ""
@@ -74,8 +69,6 @@ def executor():
     Track_description.tag_config("here", background="green2", foreground="blue2")
     Track_description.tag_config("start", foreground="SkyBlue3")
 
-    #print(colored('Song Duration: ','blue',attrs=['bold']) + colored(str(math.floor(dur/60)) + ' min ' + str(math.floor(dur) - math.floor(dur/60)*60) + ' sec','cyan'))
-
     while(True):
       root.update()
       try:
@@ -88,26 +81,6 @@ def executor():
       amount_loaded = edm_collection.execute_script("return document.getElementById('movie_player').getVideoLoadedFraction()")
       buffer_progress["value"] = amount_loaded
       track_progress["value"] = (tim/dur)
-      '''
-      sec = math.floor(tim)
-      if tim<60:
-          tim = round(tim)
-          print(colored('0:' + str(tim),'yellow'),end = '\r')
-          sys.stdout.flush()
-      else :
-          sys.stdout.flush()
-          tim = tim/60
-          tim = math.floor(tim)
-          secon = sec - math.floor(tim)*60
-
-          if secon<=9:
-               print(colored(str(math.floor(tim)) + ':0' +str(secon),'yellow'),end = '\r')
-               sys.stdout.flush()
-
-          else:
-               print(colored(str(math.floor(tim)) + ':' +str(secon),'yellow'),end = '\r')
-               sys.stdout.flush()
-      '''
 
       if(player_status == 0):
           Track_description.delete(1.0,END)
@@ -135,7 +108,6 @@ def get_mouse(event):
     if x>=6 and x<=251 and y>=51 and y<=64:
        seek(x)
 
-
 def center(toplevel):
         toplevel.update_idletasks()
         w = toplevel.winfo_screenwidth()
@@ -161,10 +133,8 @@ def play_pause(event):
 def change(event):
  try:
   edm_collection.execute_script('document.getElementsByTagName("video")[0].pause()')
-
   edm_collection.back()
   edm_collection.back()
-  #time.sleep(4)
   executor()
  except Exception:
   print("")
@@ -182,13 +152,7 @@ def exit():
 
 
 def close_player():
-  #display.stop()
-  '''
-  try :
-      root.destroy()
-  except Exception:
-      print("")
-  '''
+
   try:
       edm_collection.quit()
   except Exception:
@@ -204,7 +168,6 @@ def player_on(event):
   global edm_collection
   edm_collection = webdriver.Firefox()
   edm_collection.get("https://www.youtube.com/playlist?list=PL7-4xVu8FNDDuvU24R1t1PjVADO7DKk4u")
-  #time.sleep(6)
   executor()
 
 entry_value = StringVar(root, value="")
