@@ -1,13 +1,13 @@
 # Youtube Music Streamer
 
-### Important modules
+#### About 
+This python application streams music from a specifed youtube music playlist. It uses JS calls, on the weblink source code components to play, pause or change the song being played.
+
+#### Modules used
 1. Tkinter
 2. Selenium
 3. Webdriver
 4. Python native JS
-
-#### About 
-This python application streams music from a specifed youtube music playlist. It uses JS calls, on the weblink source code components to play, pause or change the song being played.
 
 #### Trying it out
 First install the required modules using pip3:
