@@ -150,16 +150,12 @@ def exit():
   except Exception:
       print("")
 
-
 def close_player():
 
   try:
       edm_collection.quit()
   except Exception:
       print("")
-
-
-
 
 def player_on(event):
   global display
@@ -178,7 +174,6 @@ global style
 style2 = ttk.Style()
 style1 = ttk.Style()
 ttk.Style().theme_use('clam')
-
 x = 0
 
 style1.configure("SkyBlue3.Horizontal.TProgressbar",
@@ -189,8 +184,8 @@ style1.configure("SkyBlue3.Horizontal.TProgressbar",
                  lightcolor  = "SkyBlue3",
                  darkcolor = "SkyBlue3",
                  bordercolor = "blue"
+                 )
 
-                     )
 style2.configure("Blue4.Horizontal.TProgressbar",
                  padding = 3,
                  background = "Blue4",
@@ -199,8 +194,7 @@ style2.configure("Blue4.Horizontal.TProgressbar",
                  lightcolor  = "Blue2",
                  darkcolor = "Blue2",
                  bordercolor = "Blue2"
-
-                     )
+                 )
 
 Track_description = Text(relief = FLAT,height = 3,width = 35,fg ="lawn green" ,bg = "black",bd =0,highlightbackground = "blue",wrap = WORD,)
 Track_description.grid(row = 0,column = 1,columnspan = 3,pady = 0, padx =3,sticky =W)
@@ -209,22 +203,21 @@ track_progress = ttk.Progressbar(root,style = "SkyBlue3.Horizontal.TProgressbar"
 track_progress.grid(row = 1,column = 1,columnspan = 3,padx =3,pady = 2,sticky =W)
 track_progress.configure(style = "SkyBlue3.Horizontal.TProgressbar")
 
+global photo4
+global photo5
 photo1 = PhotoImage(file="~/app/mus_images/arent.png")
 photo2 = PhotoImage(file = "~/app/mus_images/trx1.png")
 photo3 = PhotoImage(file = "~/app/mus_images/c123.png")
-global photo4
-global photo5
 photo4 = PhotoImage(file = "~/app/mus_images/pause12.png")
 photo5 = PhotoImage(file = "~/app/mus_images/play12.png")
 photo6 = PhotoImage(file = "~/app/mus_images/SJ.gif")
 
 
-
+global button4
 button2 = Button(image = photo3,background = "blue",width = 50, height = 34,relief = GROOVE,overrelief = GROOVE,anchor = "center",activebackground = "DeepSkyBlue2",highlightbackground = "blue")
 button2.place(relx = 0.715, rely =0.65,anchor = "center" )
 button3 = Button(image = photo2,background = "blue",width = 50,height = 38,relief = GROOVE,overrelief = GROOVE,command = close_player,anchor = "center",activebackground = "DeepSkyBlue2",highlightbackground = "blue")
 button3.place(relx = 0.5,rely = 0.85,anchor = "center")
-global button4
 button4 = Button(image = photo4,background = "blue",width = 50,height = 34,relief = GROOVE,overrelief = GROOVE,anchor = "center",activebackground = "DeepSkyBlue2",highlightbackground = "blue")
 button4.place(relx = 0.287,rely = 0.648,anchor = "center")
 
@@ -242,7 +235,6 @@ button1.place(relx = 0.5,rely = 0.45,anchor = "center")
 button1.bind("<Button-1>",player_on)
 button4.bind("<Button-1>",play_pause)
 button2.bind("<Button-1>",change)
-#center(root)
 root.bind('<B1-Motion>',move_window)
 root.overrideredirect(1)
 root.update_idletasks()
