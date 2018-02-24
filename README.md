@@ -1,4 +1,4 @@
-# Yotube Music Streamer
+# Youtube Music Streamer
 
 ### Important modules
 1. Tkinter
